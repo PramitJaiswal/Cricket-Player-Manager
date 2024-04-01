@@ -1,0 +1,27 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Player Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cricket Player Manager</h1>
+  <form id="addPlayerForm">
+    <input type="text" name="name" placeholder="Player Name" required>
+    <input type="url" name="photoURL" placeholder="Photo URL">
+    <input type="date" name="dob" placeholder="Date of Birth">
+    <textarea name="careerInfo" placeholder="Career Information"></textarea>
+    <input type="number" name="matchesPlayed" placeholder="Matches Played">
+    <input type="number" name="runsScored" placeholder="Runs Scored">
+    <input type="number" name="wicketsTaken" placeholder="Wickets Taken">
+    <button type="submit">Add Player</button>
+  </form>
+
+  <div id="playersList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
