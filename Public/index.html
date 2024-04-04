@@ -4,11 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cricket Player Manager</title>
+  <title>Node.JS Test Project 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Cricket Player Manager</h1>
+  <h1>Crickets Wikki</h1>
+    <!-- Add the search bar -->
+    <input type="text" id="searchInput" placeholder="Enter Player's Name">
+    <button onclick="searchPlayers()">Search</button>
+
+
   <form id="addPlayerForm">
     <input type="text" name="name" placeholder="Player Name" required>
     <input type="url" name="photoURL" placeholder="Photo URL">
@@ -20,12 +25,12 @@
     <button type="submit">Add Player</button>
   </form>
 
-  <!-- Add the search bar -->
-  <input type="text" id="searchInput" placeholder="Search by name">
-  <button onclick="searchPlayers()">Search</button>
 
   <div id="playersList"></div>
+  
 
   <script src="script.js"></script>
+
+
 </body>
 </html>
