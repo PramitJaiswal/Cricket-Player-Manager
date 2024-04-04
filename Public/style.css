@@ -1,0 +1,89 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;  /* Larger and more impactful headline */
+    color: orange;        /* Darker heading color for contrast */
+    font-weight: bold; /* Add boldness for emphasis */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  }
+  
+  /* Search bar and button */
+  #searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;                 /* Adjust width as needed */
+    margin-right: 10px;            /* Add spacing between search bar and button */
+  }
+  
+  #searchInput:focus {
+    border-color: #66afe9;         /* Highlight search bar on focus */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: blue;  /* Green for positive action */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #00a80b;  /* Darken button color on hover */
+  }
+  
+  /* Add player form */
+  #addPlayerForm {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  #addPlayerForm input[type="text"],
+  #addPlayerForm input[type="url"],
+  #addPlayerForm input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(33% - 10px);  /* Reduce width for stats section */
+    margin-bottom: 10px;
+  }
+  
+  #addPlayerForm textarea {
+    height: 100px;
+    width: calc(66% - 10px);  /* Expand career info section */
+  }
+  
+  #addPlayerForm button {
+    width: calc(100%);
+    margin-top: 10px;
+  }
+  
+  /* Players list */
+  #playersList {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  #playersList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #playersList li {
+    margin-bottom: 5px;
+  }
+  
