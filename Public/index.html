@@ -1,4 +1,3 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +8,10 @@
 </head>
 <body>
   <h1>Cricki Wikki</h1>
-    <!-- Add the search bar -->
-    <input type="text" id="searchInput" placeholder="Enter Player's Name">
-    <button onclick="searchPlayers()">Search</button>
 
+  <!-- Add the search bar -->
+  <input type="text" id="searchInput" placeholder="Enter Player's Name">
+  <button onclick="searchPlayers()">Search</button>
 
   <form id="addPlayerForm">
     <input type="text" name="name" placeholder="Player Name" required>
@@ -25,12 +24,29 @@
     <button type="submit">Add Player</button>
   </form>
 
-
   <div id="playersList"></div>
 
+  <!-- Edit modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <h2>Edit Player</h2>
+      <form id="editForm">
+        <input type="hidden" name="id">
+        <input type="text" name="name" placeholder="Player Name" required>
+        <input type="url" name="photoURL" placeholder="Photo URL">
+        <input type="date" name="dob" placeholder="Date of Birth">
+        <textarea name="careerInfo" placeholder="Career Information"></textarea>
+        <input type="number" name="matchesPlayed" placeholder="Matches Played">
+        <input type="number" name="runsScored" placeholder="Runs Scored">
+        <input type="number" name="wicketsTaken" placeholder="Wickets Taken">
+        <button type="submit">Update Player</button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </body>
 </html>

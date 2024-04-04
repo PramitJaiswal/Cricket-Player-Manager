@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -32,6 +31,32 @@ app.get('/api/players', async (req, res) => {
     }
     const players = await Player.find(query);
     res.json(players);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.get('/api/players/:id', async (req, res) => {
+  try {
+    const player = await Player.findById(req.params.id);
+    if (player) {
+      res.json(player);
+    } else {
+      res.status(404).json({ message: 'Player not found' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+app.put('/api/players/:id', async (req, res) => {
+  try {
+    const updatedPlayer = await Player.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (updatedPlayer) {
+      res.json(updatedPlayer);
+    } else {
+      res.status(404).json({ message: 'Player not found' });
+    }
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
