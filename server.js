@@ -26,7 +26,11 @@ app.post('/api/players', async (req, res) => {
 
 app.get('/api/players', async (req, res) => {
   try {
-    const players = await Player.find();
+    let query = {};
+    if (req.query.name) {
+      query.name = { $regex: new RegExp(req.query.name, 'i') };
+    }
+    const players = await Player.find(query);
     res.json(players);
   } catch (err) {
     res.status(500).json({ message: err.message });

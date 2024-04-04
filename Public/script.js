@@ -29,6 +29,23 @@ window.onload = async () => {
     }
   });
 
+  window.searchPlayers = async () => {
+    const searchInput = document.getElementById('searchInput').value.trim();
+    if (searchInput === '') {
+      fetchPlayers();
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/players?name=${encodeURIComponent(searchInput)}`);
+      const players = await response.json();
+      playersList.innerHTML = '';
+      players.forEach(player => addPlayerToList(player));
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   const fetchPlayers = async () => {
     try {
       const response = await fetch('/api/players');
